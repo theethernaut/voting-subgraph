@@ -2,13 +2,13 @@ specVersion: 0.0.2
 description: Gravatar for Ethereum
 repository: https://github.com/ajsantander/voting-subgraph
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: Voting
     network: rinkeby
     source:
-      address: '0xc73E86AaB9D232495399d62fc80a36AE52952b81'
+      address: "0xc73E86AaB9D232495399d62fc80a36AE52952b81"
       abi: Voting
       startBlock: 6453514
     mapping:
@@ -20,7 +20,7 @@ dataSources:
         - Cast
       abis:
         - name: Voting
-          file: ./abis/Voting.json
+          file: Voting/abis/Voting.json
       eventHandlers:
         - event: StartVote(indexed uint256,indexed address,string)
           handler: handleStartVote
@@ -28,4 +28,4 @@ dataSources:
           handler: handleCastVote
         - event: ExecuteVote(indexed uint256)
           handler: handleExecuteVote
-      file: ./src/mapping.ts
+      file: Voting/Voting.wasm
