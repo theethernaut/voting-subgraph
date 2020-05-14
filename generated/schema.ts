@@ -78,67 +78,67 @@ export class Vote extends Entity {
     this.set("executed", Value.fromBoolean(value));
   }
 
-  get startDate(): string {
+  get startDate(): BigInt {
     let value = this.get("startDate");
-    return value.toString();
+    return value.toBigInt();
   }
 
-  set startDate(value: string) {
-    this.set("startDate", Value.fromString(value));
+  set startDate(value: BigInt) {
+    this.set("startDate", Value.fromBigInt(value));
   }
 
-  get snapshotBlock(): string {
+  get snapshotBlock(): BigInt {
     let value = this.get("snapshotBlock");
-    return value.toString();
+    return value.toBigInt();
   }
 
-  set snapshotBlock(value: string) {
-    this.set("snapshotBlock", Value.fromString(value));
+  set snapshotBlock(value: BigInt) {
+    this.set("snapshotBlock", Value.fromBigInt(value));
   }
 
-  get supportRequiredPct(): string {
+  get supportRequiredPct(): BigInt {
     let value = this.get("supportRequiredPct");
-    return value.toString();
+    return value.toBigInt();
   }
 
-  set supportRequiredPct(value: string) {
-    this.set("supportRequiredPct", Value.fromString(value));
+  set supportRequiredPct(value: BigInt) {
+    this.set("supportRequiredPct", Value.fromBigInt(value));
   }
 
-  get minAcceptQuorum(): string {
+  get minAcceptQuorum(): BigInt {
     let value = this.get("minAcceptQuorum");
-    return value.toString();
+    return value.toBigInt();
   }
 
-  set minAcceptQuorum(value: string) {
-    this.set("minAcceptQuorum", Value.fromString(value));
+  set minAcceptQuorum(value: BigInt) {
+    this.set("minAcceptQuorum", Value.fromBigInt(value));
   }
 
-  get yea(): string {
+  get yea(): BigInt {
     let value = this.get("yea");
-    return value.toString();
+    return value.toBigInt();
   }
 
-  set yea(value: string) {
-    this.set("yea", Value.fromString(value));
+  set yea(value: BigInt) {
+    this.set("yea", Value.fromBigInt(value));
   }
 
-  get nay(): string {
+  get nay(): BigInt {
     let value = this.get("nay");
-    return value.toString();
+    return value.toBigInt();
   }
 
-  set nay(value: string) {
-    this.set("nay", Value.fromString(value));
+  set nay(value: BigInt) {
+    this.set("nay", Value.fromBigInt(value));
   }
 
-  get votingPower(): string {
+  get votingPower(): BigInt {
     let value = this.get("votingPower");
-    return value.toString();
+    return value.toBigInt();
   }
 
-  set votingPower(value: string) {
-    this.set("votingPower", Value.fromString(value));
+  set votingPower(value: BigInt) {
+    this.set("votingPower", Value.fromBigInt(value));
   }
 
   get script(): Bytes {
@@ -217,13 +217,13 @@ export class Cast extends Entity {
     this.set("supports", Value.fromBoolean(value));
   }
 
-  get voterStake(): string {
+  get voterStake(): BigInt {
     let value = this.get("voterStake");
-    return value.toString();
+    return value.toBigInt();
   }
 
-  set voterStake(value: string) {
-    this.set("voterStake", Value.fromString(value));
+  set voterStake(value: BigInt) {
+    this.set("voterStake", Value.fromBigInt(value));
   }
 
   get vote(): string {

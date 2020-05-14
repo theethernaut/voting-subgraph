@@ -33,13 +33,13 @@ export function handleStartVote(event: StartVoteEvent): void {
   let voteData = voting.getVote(voteId)
   vote.open = voteData.value0
   vote.executed = voteData.value1
-  vote.startDate = voteData.value2.toString()
-  vote.snapshotBlock = voteData.value3.toString()
-  vote.supportRequiredPct = voteData.value4.toString()
-  vote.minAcceptQuorum = voteData.value5.toString()
-  vote.yea = voteData.value6.toString()
-  vote.nay = voteData.value7.toString()
-  vote.votingPower = voteData.value8.toString()
+  vote.startDate = voteData.value2
+  vote.snapshotBlock = voteData.value3
+  vote.supportRequiredPct = voteData.value4
+  vote.minAcceptQuorum = voteData.value5
+  vote.yea = voteData.value6
+  vote.nay = voteData.value7
+  vote.votingPower = voteData.value8
   vote.script = voteData.value9
 
   // Other properties.
@@ -64,7 +64,7 @@ export function handleCastVote(event: CastVoteEvent): void {
   cast.voteId = voteId.toHex()
   cast.voter = event.params.voter
   cast.supports = event.params.supports
-  cast.voterStake = event.params.stake.toString()
+  cast.voterStake = event.params.stake
   cast.save()
 
   // Register the cast in the parent vote entity.

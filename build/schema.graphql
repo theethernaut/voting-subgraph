@@ -4,13 +4,13 @@ type Vote @entity {
   metadata: String!
   open: Boolean!
   executed: Boolean!
-  startDate: String!
-  snapshotBlock: String!
-  supportRequiredPct: String!
-  minAcceptQuorum: String!
-  yea: String!
-  nay: String!
-  votingPower: String!
+  startDate: BigInt!
+  snapshotBlock: BigInt!
+  supportRequiredPct: BigInt!
+  minAcceptQuorum: BigInt!
+  yea: BigInt!
+  nay: BigInt!
+  votingPower: BigInt!
   script: Bytes!
   casts: [Cast!]!
 }
@@ -20,6 +20,6 @@ type Cast @entity {
   voteId: String!
   voter: Bytes!
   supports: Boolean!
-  voterStake: String!
+  voterStake: BigInt!
   vote: Vote! @derivedFrom(field: "casts")
 }
