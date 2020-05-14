@@ -21,20 +21,26 @@ import {
 // StartVote(uint256 indexed voteId, address indexed creator, string metadata)
 export function handleStartVote(event: StartVoteEvent): void {
   // Create vote entity.
-  let vote = new VoteEntity(event.params.voteId.toHex())
+  let voteId = event.params.voteId
+  let vote = new VoteEntity(voteId.toHex())
 
   // Properties extracted from the event.
   vote.creator = event.params.creator
   vote.metadata = event.params.metadata
 
   // Properties extracted from the contract.
-  // let voting = VotingContract.bind(event.address)
-  // vote.startTimestamp =
-  // vote.snapshotBlock =
-  // vote.supportRequiredPct =
-  // vote.minAcceptQuorumSupport =
-  // vote.votingPower =
-  // vote.executionScript =
+  let voting = VotingContract.bind(event.address)
+  let voteData = voting.getVote(voteId)
+  vote.open = voteData.value0
+  vote.executed = voteData.value1
+  vote.startDate = voteData.value2.toString()
+  vote.snapshotBlock = voteData.value3.toString()
+  vote.supportRequiredPct = voteData.value4.toString()
+  vote.minAcceptQuorum = voteData.value5.toString()
+  vote.yea = voteData.value6.toString()
+  vote.nay = voteData.value7.toString()
+  vote.votingPower = voteData.value8.toString()
+  vote.script = voteData.value9
 
   // Other properties.
   vote.executed = false
@@ -55,7 +61,7 @@ export function handleCastVote(event: CastVoteEvent): void {
   let cast = new CastEntity(castId)
 
   // Properties extracted from the event.
-  cast.voteId = voteId.toString()
+  cast.voteId = voteId.toHex()
   cast.voter = event.params.voter
   cast.supports = event.params.supports
   cast.voterStake = event.params.stake.toString()

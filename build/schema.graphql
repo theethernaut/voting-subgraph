@@ -2,13 +2,16 @@ type Vote @entity {
   id: ID!
   creator: Bytes!
   metadata: String!
-  # startTimestamp: Int!
-  # snapshotBlock: Int!
-  # supportRequiredPct: Int!
-  # minAcceptQuorumSupport: Int!
-  # votingPower: Int!
-  # executionScript: Bytes!
+  open: Boolean!
   executed: Boolean!
+  startDate: String!
+  snapshotBlock: String!
+  supportRequiredPct: String!
+  minAcceptQuorum: String!
+  yea: String!
+  nay: String!
+  votingPower: String!
+  script: Bytes!
   casts: [Cast!]!
 }
 

@@ -60,6 +60,15 @@ export class Vote extends Entity {
     this.set("metadata", Value.fromString(value));
   }
 
+  get open(): boolean {
+    let value = this.get("open");
+    return value.toBoolean();
+  }
+
+  set open(value: boolean) {
+    this.set("open", Value.fromBoolean(value));
+  }
+
   get executed(): boolean {
     let value = this.get("executed");
     return value.toBoolean();
@@ -67,6 +76,78 @@ export class Vote extends Entity {
 
   set executed(value: boolean) {
     this.set("executed", Value.fromBoolean(value));
+  }
+
+  get startDate(): string {
+    let value = this.get("startDate");
+    return value.toString();
+  }
+
+  set startDate(value: string) {
+    this.set("startDate", Value.fromString(value));
+  }
+
+  get snapshotBlock(): string {
+    let value = this.get("snapshotBlock");
+    return value.toString();
+  }
+
+  set snapshotBlock(value: string) {
+    this.set("snapshotBlock", Value.fromString(value));
+  }
+
+  get supportRequiredPct(): string {
+    let value = this.get("supportRequiredPct");
+    return value.toString();
+  }
+
+  set supportRequiredPct(value: string) {
+    this.set("supportRequiredPct", Value.fromString(value));
+  }
+
+  get minAcceptQuorum(): string {
+    let value = this.get("minAcceptQuorum");
+    return value.toString();
+  }
+
+  set minAcceptQuorum(value: string) {
+    this.set("minAcceptQuorum", Value.fromString(value));
+  }
+
+  get yea(): string {
+    let value = this.get("yea");
+    return value.toString();
+  }
+
+  set yea(value: string) {
+    this.set("yea", Value.fromString(value));
+  }
+
+  get nay(): string {
+    let value = this.get("nay");
+    return value.toString();
+  }
+
+  set nay(value: string) {
+    this.set("nay", Value.fromString(value));
+  }
+
+  get votingPower(): string {
+    let value = this.get("votingPower");
+    return value.toString();
+  }
+
+  set votingPower(value: string) {
+    this.set("votingPower", Value.fromString(value));
+  }
+
+  get script(): Bytes {
+    let value = this.get("script");
+    return value.toBytes();
+  }
+
+  set script(value: Bytes) {
+    this.set("script", Value.fromBytes(value));
   }
 
   get casts(): Array<string> {
